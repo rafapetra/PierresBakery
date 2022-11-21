@@ -15,7 +15,7 @@ namespace Bakery.Tests
     }
 
     [TestMethod]
-    public void GetAmount_ReturnsAmount_Int()
+    public void GetBreadAmount_ReturnsAmount_Int()
 
     {
       int GetAmount = 2;
@@ -29,6 +29,16 @@ namespace Bakery.Tests
     {
       Pastry newPastry = new Pastry(2);
       Assert.AreEqual(typeof(Pastry), newPastry.GetType());
+    }
+
+        [TestMethod]
+    public void GetPastryAmount_ReturnsAmount_Int()
+
+    {
+      int GetAmount = 2;
+      Pastry newPastry = new Pastry(GetAmount);
+      int result = newPastry.Amount;
+      Assert.AreEqual(GetAmount, result);
     }
   }
 }
