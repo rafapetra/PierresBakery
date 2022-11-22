@@ -10,10 +10,10 @@ namespace Bakery.Models
       
     }
 
-    public int BreadOrderCost(int Amount)
+    public int BreadOrderCost(int breadAmount)
     {
-      int divisibleByThree = Amount / 3;
-      int remainder = Amount % 3;
+      int divisibleByThree = breadAmount / 3;
+      int remainder = breadAmount % 3;
 
       int breadTotal = (divisibleByThree * 10) + (remainder * 5);
       return breadTotal;
