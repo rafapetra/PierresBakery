@@ -9,6 +9,16 @@ namespace Bakery.Models
       Amount = amount;
       
     }
+
+    public int BreadOrderCost(int Amount)
+    {
+      int divisibleByThree = Amount / 3;
+      int remainder = Amount % 3;
+
+      int breadTotal = (divisibleByThree * 10) + (remainder * 5);
+      return breadTotal;
+    }
+    
   }
 
     public class Pastry

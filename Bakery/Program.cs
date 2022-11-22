@@ -20,8 +20,8 @@ namespace Bakery
         string stringUserPastryInput = Console.ReadLine();
         int intUserPastryInput = int.Parse(stringUserPastryInput);
 
-        int breadAmount = intUserBreadInput;
-        Bread newBread = new Bread(breadAmount);
+        Bread newBread = new Bread(intUserBreadInput);
+        int breadTotalCost = newBread.BreadOrderCost(intUserBreadInput);
 
         int pastryAmount = intUserPastryInput;
         Pastry newPastry = new Pastry(pastryAmount);
@@ -31,7 +31,7 @@ namespace Bakery
         Console.WriteLine("Breads: " + newBread.Amount);
         Console.WriteLine("Pastries: " + newPastry.Amount);
         Console.WriteLine(" ");
-        Console.WriteLine("Your total is: ");
+        Console.WriteLine("Your total is: " + breadTotalCost);
 
 
       }
