@@ -40,5 +40,41 @@ namespace Bakery.Tests
       int result = newPastry.Amount;
       Assert.AreEqual(GetAmount, result);
     }
+
+    [TestMethod]
+    public void BreadOrderCost_ReturnsTotalForZeroLoaves_Int()
+    {
+      Bread newBread = new Bread(5);
+      int breadCount = 0;
+      int breadCost = 0;
+      Assert.AreEqual(breadCost, newBread.BreadOrderCost(breadCount));
+    }
+
+    [TestMethod]
+    public void BreadOrderCost_ReturnsTotalForTwoLoaves_Int()
+    {
+      Bread newBread = new Bread(5);
+      int breadCount = 2;
+      int breadCost = 10;
+      Assert.AreEqual(breadCost, newBread.BreadOrderCost(breadCount));
+    }
+
+    [TestMethod]
+    public void BreadOrderCost_ReturnsTotalForThreeLoaves_Int()
+    {
+      Bread newBread = new Bread(5);
+      int breadCount = 3;
+      int breadCost = 10;
+      Assert.AreEqual(breadCost, newBread.BreadOrderCost(breadCount));
+    }
+
+        [TestMethod]
+    public void BreadOrderCost_ReturnsTotalForSixLoaves_Int()
+    {
+      Bread newBread = new Bread(5);
+      int breadCount = 6;
+      int breadCost = 20;
+      Assert.AreEqual(breadCost, newBread.BreadOrderCost(breadCount));
+    }
   }
 }

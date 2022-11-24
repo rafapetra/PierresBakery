@@ -7,7 +7,7 @@ namespace Bakery.Models
     public Bread(int amount)
     {
       Amount = amount;
-      
+
     }
 
     public int BreadOrderCost(int breadAmount)
@@ -18,17 +18,24 @@ namespace Bakery.Models
       int breadTotal = (divisibleByThree * 10) + (remainder * 5);
       return breadTotal;
     }
-    
+
   }
 
-    public class Pastry
+  public class Pastry
   {
     public int Amount { get; }
 
     public Pastry(int amount)
     {
       Amount = amount;
-      
+    }
+
+    public int PastryOrderCalc(int pastryCount)
+    {
+      int divisibleByThree = pastryCount / 3;
+      int remainder = pastryCount % 3;
+
+      int pastryCos
     }
   }
 }
