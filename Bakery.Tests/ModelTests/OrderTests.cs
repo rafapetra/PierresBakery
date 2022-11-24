@@ -31,7 +31,7 @@ namespace Bakery.Tests
       Assert.AreEqual(typeof(Pastry), newPastry.GetType());
     }
 
-        [TestMethod]
+    [TestMethod]
     public void GetPastryAmount_ReturnsAmount_Int()
 
     {
@@ -68,7 +68,7 @@ namespace Bakery.Tests
       Assert.AreEqual(breadCost, newBread.BreadOrderCost(breadCount));
     }
 
-        [TestMethod]
+    [TestMethod]
     public void BreadOrderCost_ReturnsTotalForSixLoaves_Int()
     {
       Bread newBread = new Bread(5);
@@ -76,5 +76,48 @@ namespace Bakery.Tests
       int breadCost = 20;
       Assert.AreEqual(breadCost, newBread.BreadOrderCost(breadCount));
     }
+
+    [TestMethod]
+    public void PastryOrderCost_ReturnsTotalForZeroPastries_Int()
+    {
+      Pastry newPastry = new Pastry(5);
+      int pastryCount = 0;
+      int pastryCost = 0;
+      Assert.AreEqual(pastryCost, newPastry.PastryOrderCost(pastryCount));
+    }
+
+        [TestMethod]
+    public void PastryOrderCost_ReturnsTotalForOnePastry_Int()
+    {
+      Pastry newPastry = new Pastry(5);
+      int pastryCount = 1;
+      int pastryCost = 2;
+      Assert.AreEqual(pastryCost, newPastry.PastryOrderCost(pastryCount));
+    }
+
+        [TestMethod]
+    public void PastryOrderCost_ReturnsTotalForTwoPastries_Int()
+    {
+      Pastry newPastry = new Pastry(5);
+      int pastryCount = 2;
+      int pastryCost = 4;
+      Assert.AreEqual(pastryCost, newPastry.PastryOrderCost(pastryCount));
+    }
+        [TestMethod]
+    public void PastryOrderCost_ReturnsTotalForThreePastries_Int()
+    {
+      Pastry newPastry = new Pastry(5);
+      int pastryCount = 3;
+      int pastryCost = 5;
+      Assert.AreEqual(pastryCost, newPastry.PastryOrderCost(pastryCount));
+    }
+        public void PastryOrderCost_ReturnsTotalForSixPastries_Int()
+    {
+      Pastry newPastry = new Pastry(5);
+      int pastryCount = 6;
+      int pastryCost = 10;
+      Assert.AreEqual(pastryCost, newPastry.PastryOrderCost(pastryCount));
+    }
+    
   }
 }

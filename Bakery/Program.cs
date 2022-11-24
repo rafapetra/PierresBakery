@@ -7,7 +7,7 @@ namespace Bakery
   {
     public static void Main()
     {
-      Console.WriteLine("Welcome to Pierre's Bakery. We offer bread and pastries. Our prices are: $5 for bread, buy 2 get one free. Pastries are 1 for $2 and 3 for $5. Thanks for visiting! Would you like to start your order?");
+      Console.WriteLine("Welcome to Pierre's Bakery. Our prices are: $5 for bread, buy 2 get one free. Pastries are 1 for $2 and 3 for $5. Would you like to start your order?");
       string stringUserInput = Console.ReadLine();
 
       if (stringUserInput == "yes" || stringUserInput == "Yes")
@@ -23,15 +23,17 @@ namespace Bakery
         Bread newBread = new Bread(intUserBreadInput);
         int breadTotalCost = newBread.BreadOrderCost(intUserBreadInput);
 
-        int pastryAmount = intUserPastryInput;
-        Pastry newPastry = new Pastry(pastryAmount);
+        Pastry newPastry = new Pastry(intUserPastryInput);
+        int pastryTotalCost = newPastry.PastryOrderCost(intUserPastryInput);
+
+        int orderTotal = pastryTotalCost + breadTotalCost;
 
         Console.WriteLine(" ");
         Console.WriteLine("Your order is:");
         Console.WriteLine("Breads: " + newBread.Amount);
         Console.WriteLine("Pastries: " + newPastry.Amount);
         Console.WriteLine(" ");
-        Console.WriteLine("Your total is: " + breadTotalCost);
+        Console.WriteLine("Your total is: " + orderTotal);
 
 
       }
@@ -42,6 +44,3 @@ namespace Bakery
     }
   }
 }
-
-// user input equals list item
-// a method for each list item for each bread into tomes 5 except divisible byb3

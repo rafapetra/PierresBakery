@@ -30,12 +30,13 @@ namespace Bakery.Models
       Amount = amount;
     }
 
-    public int PastryOrderCalc(int pastryCount)
+    public int PastryOrderCost(int pastryCount)
     {
       int divisibleByThree = pastryCount / 3;
       int remainder = pastryCount % 3;
 
-      int pastryCos
+      int pastryCost = (divisibleByThree * 5) + (remainder * 2);
+      return pastryCost;
     }
   }
 }
